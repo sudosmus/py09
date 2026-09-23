@@ -23,7 +23,7 @@ def main() -> None:
         #last_maintenance=datetime(2024, 1, 15, 10, 0, 0),
         last_maintenance="2024-01-15T10:00:00",
         is_operational=True,
-        #notes="Operational",
+        notes="Operational",
     )
     print("Space Station Data Validation")
     print("========================================")
@@ -33,7 +33,7 @@ def main() -> None:
     print(f"Crew: {station_valid.crew_size} people")
     print(f"Power: {station_valid.power_level}%")
     print(f"Oxygen: {station_valid.oxygen_level}%")
-    print(f"Status: {station_valid.notes}")
+    print(f"Status: {'Operational' if station_valid.is_operational else 'Not Operational'}")
 
     print()
     print("========================================")
@@ -43,7 +43,7 @@ def main() -> None:
         station_invalid = SpaceStation(
             station_id="ISS001",
             name="International Space Station",
-            crew_size=0,
+            crew_size=30,
             power_level=85.5,
             oxygen_level=92.3,
             #last_maintenance=datetime(2024, 1, 15, 10, 0, 0),
